@@ -11,6 +11,7 @@ import com.example.franchise_api.mapper.FranchiseMapper;
 import com.example.franchise_api.mapper.ProductMapper;
 import com.example.franchise_api.model.Branch;
 import com.example.franchise_api.dto.TopProductResponse;
+import com.example.franchise_api.dto.UpdateNameFranchise;
 import com.example.franchise_api.model.Franchise;
 import com.example.franchise_api.model.Product;
 import com.example.franchise_api.repository.FranchiseRepository;
@@ -124,6 +125,15 @@ public class FranchiseService {
 
 					return new TopProductResponse(branch.getName(), topProduct.getName(), topProduct.getStock());
 				}).toList();
+	}
+
+	public @Nullable Franchise updateName(String franchiseName, UpdateNameFranchise franchiseUpdateName) {
+		Query query = new Query(Criteria.where("name").is(franchiseName));
+		Update update = new Update().set("name", franchiseUpdateName.name());
+		Franchise franchise = mongoTemplate.findAndModify(query, update, FindAndModifyOptions.options().returnNew(true),
+				Franchise.class);
+		return Optional.ofNullable(franchise).orElseThrow(() -> new FranchiseNotFoundException(franchiseName));
+
 	}
 
 }

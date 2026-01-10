@@ -17,6 +17,7 @@ import com.example.franchise_api.dto.BranchesCreateDto;
 import com.example.franchise_api.dto.FranchiseCreateDto;
 import com.example.franchise_api.dto.ProductCreateDto;
 import com.example.franchise_api.dto.TopProductResponse;
+import com.example.franchise_api.dto.UpdateNameFranchise;
 import com.example.franchise_api.service.FranchiseService;
 
 @RestController
@@ -32,6 +33,13 @@ public class FranchiseController {
 	public ResponseEntity<Void> franchises(@RequestBody FranchiseCreateDto franchiseCreateDto) throws Exception {
 		this.franchiseService.save(franchiseCreateDto);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
+	}
+
+	@PatchMapping("/{franchiseName}/update/name")
+	public ResponseEntity<Void> franchises(@PathVariable String franchiseName,
+			@RequestBody UpdateNameFranchise franchiseUpdateName) throws Exception {
+		this.franchiseService.updateName(franchiseName, franchiseUpdateName);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
 
 	@PostMapping("/{franchiseName}/branches")
