@@ -4,14 +4,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class FranchiseNotFoundException extends RuntimeException {
+public class BranchNotFoundException extends RuntimeException {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public FranchiseNotFoundException(String franchiseId) {
-		super("Franchise not found with name " + franchiseId);
+	public BranchNotFoundException(String Branch) {
+		super("Branch not found with name " + Branch);
 	}
 }

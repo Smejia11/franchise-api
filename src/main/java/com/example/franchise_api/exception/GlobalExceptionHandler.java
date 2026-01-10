@@ -24,4 +24,17 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
     }
+    
+    @ExceptionHandler(BranchNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleBranchNotFound(
+    		BranchNotFoundException ex
+    ) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", Instant.now());
+        body.put("status", 404);
+        body.put("error", "Not Found");
+        body.put("message", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+    }
 }

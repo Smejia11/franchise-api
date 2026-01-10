@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.franchise_api.dto.BranchesCreateDto;
 import com.example.franchise_api.dto.FranchiseCreateDto;
+import com.example.franchise_api.dto.ProductCreateDto;
 import com.example.franchise_api.service.FranchiseService;
 
 @RestController
@@ -27,10 +28,17 @@ public class FranchiseController {
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 
-	@PostMapping("/{franchiseId}/branches")
-	public ResponseEntity<Void> branches(@PathVariable String franchiseId, @RequestBody BranchesCreateDto branchesCreateDto )
-			throws Exception {
-		this.franchiseService.findFranchiseIdAndIncrementBranch(branchesCreateDto, franchiseId);
+	@PostMapping("/{franchiseName}/branches")
+	public ResponseEntity<Void> branches(@PathVariable String franchiseName,
+			@RequestBody BranchesCreateDto branchesCreateDto) throws Exception {
+		this.franchiseService.findFranchiseIdAndIncrementBranch(branchesCreateDto, franchiseName);
+		return ResponseEntity.status(HttpStatus.CREATED).build();
+	}
+
+	@PostMapping("/{franchiseName}/branches/{branchName}/products")
+	public ResponseEntity<Void> branches(@PathVariable String franchiseName, @PathVariable String branchName,
+			@RequestBody ProductCreateDto productCreateDto) throws Exception {
+		this.franchiseService.addProductToBranch(productCreateDto, franchiseName, branchName);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 }

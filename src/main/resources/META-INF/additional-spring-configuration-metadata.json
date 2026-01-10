@@ -1,5 +1,12 @@
-{"properties": [{
-  "name": "spring.error.include-message",
-  "type": "java.lang.String",
-  "description": "A description for 'spring.error.include-message'"
-}]}
+{"properties": [
+  {
+    "name": "spring.error.include-message",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.error.include-message'"
+  },
+  {
+    "name": "spring.mongodb.auto-index-creation",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mongodb.auto-index-creation'"
+  }
+]}
