@@ -2,6 +2,7 @@ package com.example.franchise_api.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,4 +42,11 @@ public class FranchiseController {
 		this.franchiseService.addProductToBranch(productCreateDto, franchiseName, branchName);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
+
+	@DeleteMapping("/{franchiseName}/branches/{branchName}/products/{productName}")
+	public ResponseEntity<Void> branches(@PathVariable String franchiseName, @PathVariable String branchName,
+			@PathVariable String productName) throws Exception {
+		this.franchiseService.deleteProductToBranch(productName, franchiseName, branchName);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	} 
 }

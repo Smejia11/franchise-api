@@ -77,4 +77,21 @@ public class FranchiseService {
 
 	}
 
+	public void deleteProductToBranch(String productName, String franchiseName, String branchName) {
+		boolean franchiseExists = mongoTemplate.exists(Query.query(Criteria.where("name").is(franchiseName)),
+				Franchise.class);
+		if (!franchiseExists) {
+			throw new FranchiseNotFoundException(franchiseName);
+		}
+		Query query = new Query(Criteria.where("name").is(franchiseName).and("branches.name").is(branchName));
+
+		Update update = new Update().pull("branches.$.products", Query.query(Criteria.where("name").is(productName)));
+
+		UpdateResult result = mongoTemplate.updateFirst(query, update, Franchise.class);
+		if (result.getModifiedCount() == 0 || result.getMatchedCount() == 0) {
+			throw new BranchNotFoundException(branchName);
+		}
+
+	}
+
 }
