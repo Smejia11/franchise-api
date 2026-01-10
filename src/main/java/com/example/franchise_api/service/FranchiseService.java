@@ -11,7 +11,9 @@ import com.example.franchise_api.mapper.FranchiseMapper;
 import com.example.franchise_api.mapper.ProductMapper;
 import com.example.franchise_api.model.Branch;
 import com.example.franchise_api.dto.TopProductResponse;
+import com.example.franchise_api.dto.UpdateNameBranch;
 import com.example.franchise_api.dto.UpdateNameFranchise;
+import com.example.franchise_api.dto.UpdateNameProduct;
 import com.example.franchise_api.model.Franchise;
 import com.example.franchise_api.model.Product;
 import com.example.franchise_api.repository.FranchiseRepository;
@@ -60,7 +62,7 @@ public class FranchiseService {
 		}
 	}
 
-	public @Nullable Franchise addBranchToFranchises(BranchesCreateDto dto, String name) {
+	public @Nullable Franchise addBranchToFranchise(BranchesCreateDto dto, String name) {
 		Branch branch = branchesMapper.toEntity(dto);
 		Query query = new Query(Criteria.where("name").is(name));
 		Update update = new Update().push("branches", branch);
@@ -132,6 +134,31 @@ public class FranchiseService {
 		Update update = new Update().set("name", franchiseUpdateName.name());
 		Franchise franchise = mongoTemplate.findAndModify(query, update, FindAndModifyOptions.options().returnNew(true),
 				Franchise.class);
+		return Optional.ofNullable(franchise).orElseThrow(() -> new FranchiseNotFoundException(franchiseName));
+
+	}
+
+	public Franchise updateNameBranch(String franchiseName, String branchName, UpdateNameBranch updateNameBranch) {
+		this.validateFranchise(franchiseName);
+		Query query = new Query(Criteria.where("name").is(franchiseName).and("branches.name").is(branchName));
+		Update update = new Update().set("branches.$.name", updateNameBranch.name());
+		Franchise franchise = mongoTemplate.findAndModify(query, update, FindAndModifyOptions.options().returnNew(true),
+				Franchise.class);
+		return Optional.ofNullable(franchise).orElseThrow(() -> new FranchiseNotFoundException(franchiseName));
+	}
+
+	public Franchise updateNameProduct(String franchiseName, String branchName, String productName,
+			UpdateNameProduct updateNameProduct) {
+		this.validateFranchise(franchiseName);
+		Query query = new Query(Criteria.where("name").is(franchiseName));
+
+		Update update = new Update().set("branches.$[branch].products.$[product].name", updateNameProduct.name())
+				.filterArray(Criteria.where("branch.name").is(branchName))
+				.filterArray(Criteria.where("product.name").is(productName));
+
+		FindAndModifyOptions options = FindAndModifyOptions.options().returnNew(true);
+
+		Franchise franchise = mongoTemplate.findAndModify(query, update, options, Franchise.class);
 		return Optional.ofNullable(franchise).orElseThrow(() -> new FranchiseNotFoundException(franchiseName));
 
 	}
