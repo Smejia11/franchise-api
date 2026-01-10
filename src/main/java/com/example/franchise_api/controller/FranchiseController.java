@@ -17,6 +17,9 @@ import com.example.franchise_api.dto.BranchesCreateDto;
 import com.example.franchise_api.dto.FranchiseCreateDto;
 import com.example.franchise_api.dto.ProductCreateDto;
 import com.example.franchise_api.dto.TopProductResponse;
+import com.example.franchise_api.dto.UpdateNameBranch;
+import com.example.franchise_api.dto.UpdateNameFranchise;
+import com.example.franchise_api.dto.UpdateNameProduct;
 import com.example.franchise_api.service.FranchiseService;
 
 @RestController
@@ -34,10 +37,31 @@ public class FranchiseController {
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 
+	@PatchMapping("/{franchiseName}/update/name")
+	public ResponseEntity<Void> updateName(@PathVariable String franchiseName,
+			@RequestBody UpdateNameFranchise franchiseUpdateName) throws Exception {
+		this.franchiseService.updateName(franchiseName, franchiseUpdateName);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
+
+	@PatchMapping("/{franchiseName}/branches/{branchName}/update/name")
+	public ResponseEntity<Void> updateNameBranch(@PathVariable String franchiseName, @PathVariable String branchName,
+			@RequestBody UpdateNameBranch updateNameBranch) throws Exception {
+		this.franchiseService.updateNameBranch(franchiseName, branchName, updateNameBranch);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
+
+	@PatchMapping("/{franchiseName}/branches/{branchName}/products/{productName}/update/name")
+	public ResponseEntity<Void> updateNameProduct(@PathVariable String franchiseName, @PathVariable String branchName,
+			@PathVariable String productName, @RequestBody UpdateNameProduct updateNameBranch) throws Exception {
+		this.franchiseService.updateNameProduct(franchiseName, branchName, productName, updateNameBranch);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
+
 	@PostMapping("/{franchiseName}/branches")
 	public ResponseEntity<Void> addBranchToFranchises(@PathVariable String franchiseName,
 			@RequestBody BranchesCreateDto branchesCreateDto) throws Exception {
-		this.franchiseService.addBranchToFranchises(branchesCreateDto, franchiseName);
+		this.franchiseService.addBranchToFranchise(branchesCreateDto, franchiseName);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 
