@@ -49,7 +49,7 @@ public class FranchiseService {
 		return mapper.toDto(saved);
 	}
 
-	public @Nullable Franchise findFranchiseIdAndIncrementBranch(BranchesCreateDto dto, String name) {
+	public @Nullable Franchise addBranchToFranchises(BranchesCreateDto dto, String name) {
 		Branch branch = branchesMapper.toEntity(dto);
 		Query query = new Query(Criteria.where("name").is(name));
 		Update update = new Update().push("branches", branch);
@@ -91,6 +91,11 @@ public class FranchiseService {
 		if (result.getModifiedCount() == 0 || result.getMatchedCount() == 0) {
 			throw new BranchNotFoundException(branchName);
 		}
+
+	}
+
+	public void updateProductStock(String productName, String franchiseName, String branchName, Integer stock) {
+		// TODO Auto-generated method stub
 
 	}
 
