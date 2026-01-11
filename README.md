@@ -8,6 +8,16 @@
 -Docker + Docker Compose
 
 ### 2. Ejecucion Local
+Clonar proyecto
+
+```bash
+git clone https://github.com/Smejia11/franchise-api.git
+```
+Entra a la carpeta del proyecto:
+
+```bash
+cd franchise-api
+```
 
 ```bash
 docker compose up --build
