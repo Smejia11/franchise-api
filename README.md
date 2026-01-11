@@ -19,7 +19,7 @@ localhost:8080/v1
 ```
 ###  Crear franquicia
 **POST**
-```http 
+```md
  /franchises
 ```
 
@@ -38,7 +38,7 @@ curl --location 'localhost:8080/v1/franchises' \
 ```
 ###  Actualizar nombre de franquicia
 **PATCH** 
-```http 
+```md
 /franchises/{franchiseName}/update/name
 ```
 Request body
@@ -56,7 +56,7 @@ curl --location --request PATCH 'localhost:8080/v1/franchises/Franquicia 1/updat
 ```
 ### Agregar sucursal a franquicia
 **POST** 
-```http 
+```md
 /franchises/{franchiseName}/branches
 ```
 ```json
@@ -73,7 +73,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 1/branches' \
 ```
 ### Actualizar nombre de sucursal
 **PATCH** 
-```http 
+```md
 /franchises/{franchiseName}/branches/{branchName}/update/name
 ```
 ```json
@@ -90,7 +90,7 @@ curl --location --request PATCH 'localhost:8080/v1/franchises/Franquicia 2/branc
 ```
 ### Agregar producto a sucursal
 **POST**
-```http
+```md
 /franchises/{franchiseName}/branches/{branchName}/products
 ```
 ```body
@@ -109,7 +109,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/Sucursal Sur
 ```
 ### Actualizar nombre de producto
 **PATCH** 
-```http
+```md
 /franchises/{franchiseName}/branches/{branchName}/products/{productName}/update/name
 ```
 ```body
@@ -126,7 +126,7 @@ curl --location --request PATCH 'localhost:8080/v1/franchises/Franquicia 2/branc
 ```
 ### Eliminar producto de sucursal
 **DELETE** 
-```http
+```md
 /franchises/{franchiseName}/branches/{branchName}/products/{productName}
 ```
 ```curl
@@ -134,8 +134,7 @@ curl --location --request DELETE 'localhost:8080/v1/franchises/Franquicia 2/bran
 ```
 ### Actualizar stock de producto
 **PATCH** 
-
-```http
+```md
 /franchises/{franchiseName}/branches/{branchName}/products/{productName}/stock/{stock}
 ```
 ```curl
@@ -143,7 +142,7 @@ curl --location --request PATCH 'localhost:8080/v1/franchises/Franquicia 2/branc
 ```
 ### Producto con mayor stock por sucursal
 **GET** 
-```http
+```md
 /franchises/{franchiseName}/branches/products/top
 ```
 ```curl 
