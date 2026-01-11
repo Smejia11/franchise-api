@@ -157,6 +157,8 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ### Ejemplo de response para Producto con mayor stock por sucursal
 - `200 OK`
+---
+
 | Field   | Type   | Description                                      |
 |--------|--------|--------------------------------------------------|
 | branch | string | Nombre de la sucursal a la que pertenece el producto |
