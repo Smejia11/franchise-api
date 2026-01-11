@@ -153,3 +153,41 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 - `204 No Content`
 - `200 OK`
 - `404 Not Found`
+
+## TEST Criterios de Aceptación
+- `2.Exponer endpoint para agregar una nueva franquicia.`
+<img width="1096" height="545" alt="image" src="https://github.com/user-attachments/assets/a5ed11b9-5dfb-4a65-b64a-02387dd474dd" />
+- `MONGO DB`
+<img width="484" height="357" alt="image" src="https://github.com/user-attachments/assets/2c86b1e2-9810-4792-898e-35c565d8a79f" />
+
+- `3.Exponer endpoint para agregar una nueva sucursal a una franquicia`
+<img width="630" height="524" alt="image" src="https://github.com/user-attachments/assets/c21bc5e6-f3e2-4c63-b7b6-9edcbbfba996" />
+- `MONGO DB`
+<img width="477" height="477" alt="image" src="https://github.com/user-attachments/assets/7a1623d9-2b31-4dbf-92d6-9cb87fae8bb6" />
+
+- `4.Exponer endpoint para agregar un nuevo producto a una sucursal.`
+<img width="628" height="543" alt="image" src="https://github.com/user-attachments/assets/90553460-b93c-45d4-9901-1e08593e0a68" />
+- `MONGO DB`
+<img width="491" height="411" alt="image" src="https://github.com/user-attachments/assets/7e6d03f3-7474-4b40-ae17-717e6179d1d0" />
+
+- `5.Exponer endpoint para eliminar un nuevo producto a una sucursal.`
+<img width="810" height="546" alt="image" src="https://github.com/user-attachments/assets/713d52b9-4962-4fb7-9ede-d77f08f401b2" />
+- `MONGO DB`
+<img width="484" height="451" alt="image" src="https://github.com/user-attachments/assets/7e485a40-c038-4ede-9e89-9bad3289e2be" />
+
+- `6.Exponer endpoint para modificar el stock de un producto.`
+<img width="820" height="554" alt="image" src="https://github.com/user-attachments/assets/3f005a47-83b2-4624-a1e4-feebcc83a006" />
+- `MONGO DB`
+<img width="536" height="462" alt="image" src="https://github.com/user-attachments/assets/467f32f3-495b-4b1f-a291-cac803f7f869" />
+
+- `7.Exponer endpoint que permita mostrar cual es el producto que más stock tiene por sucursal para una franquicia puntual. Debe retornar un listado de productos que indique a que sucursal pertenece.`
+<img width="811" height="669" alt="image" src="https://github.com/user-attachments/assets/a8db482e-a350-472a-8f7d-fdeb6a889920" />
+- `MONGO DB`
+<img width="522" height="480" alt="image" src="https://github.com/user-attachments/assets/2827bf80-3711-4eb7-ab87-f532a1b394a9" />
+
+
+
+
+
+
+
