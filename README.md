@@ -15,7 +15,7 @@ docker compose up --build
 ### 3. Endpoints (RESTful)
 **URL-BASE**
 ```http
-`localhost:8080/v1`
+localhost:8080/v1
 ```
 ###  Crear franquicia
 **POST**
