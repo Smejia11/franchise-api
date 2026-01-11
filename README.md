@@ -233,7 +233,16 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![MongoDB top stock](https://github.com/user-attachments/assets/2827bf80-3711-4eb7-ab87-f532a1b394a9)
 
+---
 
+### Plus si se expone endpoint que permita actualizar el nombre de una franquicia.
+
+![plus 1](<img width="811" height="501" alt="image" src="https://github.com/user-attachments/assets/0c0c8e51-a693-4c00-9ed1-419570c759bf" />)
+
+#### MongoDB
+
+![MongoDB top stock](<img width="506" height="464" alt="image" src="https://github.com/user-attachments/assets/ce2936b0-140e-40c8-b6a1-9a7aaba541c9" />
+)
 
 
 
