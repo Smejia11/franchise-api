@@ -18,7 +18,7 @@ Entra a la carpeta del proyecto:
 ```bash
 cd franchise-api
 ```
-
+Ejecutar docker compose
 ```bash
 docker compose up --build
 ```
