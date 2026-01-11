@@ -179,10 +179,11 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 <img width="820" height="554" alt="image" src="https://github.com/user-attachments/assets/3f005a47-83b2-4624-a1e4-feebcc83a006" />
 - `MONGO DB`
 <img width="536" height="462" alt="image" src="https://github.com/user-attachments/assets/467f32f3-495b-4b1f-a291-cac803f7f869" />
-
 - `7.Exponer endpoint que permita mostrar cual es el producto que más stock tiene por sucursal para una franquicia puntual. Debe retornar un listado de productos que indique a que sucursal pertenece.`
 <img width="811" height="669" alt="image" src="https://github.com/user-attachments/assets/a8db482e-a350-472a-8f7d-fdeb6a889920" />
+<br>
 - `MONGO DB`
+<br>
 <img width="522" height="480" alt="image" src="https://github.com/user-attachments/assets/2827bf80-3711-4eb7-ab87-f532a1b394a9" />
 
 
