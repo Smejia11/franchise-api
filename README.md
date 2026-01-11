@@ -162,7 +162,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![Endpoint franquicia](https://github.com/user-attachments/assets/a5ed11b9-5dfb-4a65-b64a-02387dd474dd)
 
-**MongoDB**
+#### MongoDB
 ![MongoDB franquicia](https://github.com/user-attachments/assets/2c86b1e2-9810-4792-898e-35c565d8a79f)
 
 ---
@@ -171,7 +171,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![Endpoint sucursal](https://github.com/user-attachments/assets/c21bc5e6-f3e2-4c63-b7b6-9edcbbfba996)
 
-**MongoDB**
+#### MongoDB
 ![MongoDB sucursal](https://github.com/user-attachments/assets/7a1623d9-2b31-4dbf-92d6-9cb87fae8bb6)
 
 ---
@@ -180,7 +180,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![Endpoint producto](https://github.com/user-attachments/assets/90553460-b93c-45d4-9901-1e08593e0a68)
 
-**MongoDB**
+#### MongoDB
 ![MongoDB producto](https://github.com/user-attachments/assets/7e6d03f3-7474-4b40-ae17-717e6179d1d0)
 
 ---
@@ -189,7 +189,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![Endpoint delete producto](https://github.com/user-attachments/assets/713d52b9-4962-4fb7-9ede-d77f08f401b2)
 
-**MongoDB**
+#### MongoDB
 ![MongoDB delete producto](https://github.com/user-attachments/assets/7e485a40-c038-4ede-9e89-9bad3289e2be)
 
 ---
@@ -198,7 +198,7 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![Endpoint update stock](https://github.com/user-attachments/assets/3f005a47-83b2-4624-a1e4-feebcc83a006)
 
-**MongoDB**
+#### MongoDB
 ![MongoDB update stock](https://github.com/user-attachments/assets/467f32f3-495b-4b1f-a291-cac803f7f869)
 
 ---
@@ -207,7 +207,8 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 
 ![Endpoint top stock](https://github.com/user-attachments/assets/a8db482e-a350-472a-8f7d-fdeb6a889920)
 
-**MongoDB**
+#### MongoDB
+
 ![MongoDB top stock](https://github.com/user-attachments/assets/2827bf80-3711-4eb7-ab87-f532a1b394a9)
 
 
