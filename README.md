@@ -154,6 +154,26 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 - `200 OK`
 - `404 Not Found`
 
+
+### Ejemplo de response para Producto con mayor stock por sucursal
+- `200 OK`
+| Field   | Type   | Description                                      |
+|--------|--------|--------------------------------------------------|
+| branch | string | Nombre de la sucursal a la que pertenece el producto |
+| product| string | Nombre del producto con mayor stock              |
+| stock  | number | Cantidad de stock disponible del producto        |
+
+#### Example Response
+```json
+[
+  {
+    "branch": "Sucursal Norte",
+    "product": "Perros",
+    "stock": 800
+  }
+]
+```
+
 ## TEST – Criterios de Aceptación
 
 ---
