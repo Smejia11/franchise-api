@@ -243,14 +243,23 @@ curl --location 'localhost:8080/v1/franchises/Franquicia 2/branches/products/top
 #### MongoDB
 ![MongoDB update franchise name](https://github.com/user-attachments/assets/ce2936b0-140e-40c8-b6a1-9a7aaba541c9)
 
-### Plus si se expone endpoint que permita actualizar el nombre de una sucursal.
+### Plus: Endpoint para actualizar el nombre de una sucursal
 
 #### Endpoint
-<img width="820" height="501" alt="image" src="https://github.com/user-attachments/assets/a352dbfd-399e-4ffe-813f-875277b28a0d" />
-
+![Update branch name endpoint](https://github.com/user-attachments/assets/a352dbfd-399e-4ffe-813f-875277b28a0d)
 
 #### MongoDB
-<img width="503" height="447" alt="image" src="https://github.com/user-attachments/assets/63026fa5-21fc-4979-a48f-f9b2210228fa" />
+![MongoDB update branch name](https://github.com/user-attachments/assets/63026fa5-21fc-4979-a48f-f9b2210228fa)
+
+
+### Plus: Endpoint para actualizar el nombre de un producto
+
+#### Endpoint
+![Update product name endpoint](https://github.com/user-attachments/assets/a8d92fdd-79c0-45b4-afe5-2b7f2df695b2)
+
+#### MongoDB
+![MongoDB update product name](https://github.com/user-attachments/assets/a6281cd6-614c-4f07-b1d2-79efbd001947)
+
 
 
 
