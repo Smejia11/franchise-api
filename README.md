@@ -18,6 +18,11 @@ Entra a la carpeta del proyecto:
 ```bash
 cd franchise-api
 ```
+Incluir archivo .env enviado por correo con la cadena de conexión a MongoDB Atlas. Como se ve en la imagen
+<img width="298" height="504" alt="image" src="https://github.com/user-attachments/assets/d8f75d70-df13-459a-9be8-0d7488c61621" />
+
+---
+
 Ejecutar docker compose
 ```bash
 docker compose up --build
